@@ -28,7 +28,7 @@ tri(liste)
 # ou encore
 def tri(l) :
     again = True
-    while again:
+    while again :
         again = False
         for i in range(0, len(l)-1):
             if l[i] > l[i+1]:
