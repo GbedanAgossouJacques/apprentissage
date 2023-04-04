@@ -26,7 +26,7 @@ liste = [1, 3, 6, 2, 4, 1, 2, 3, 4, 6, 2, 3, 2, 2, 1, 0]
 tri(liste)
 
 # ou encore
-def tri(l):
+def tri(l) :
     again = True
     while again:
         again = False
@@ -35,7 +35,4 @@ def tri(l):
                 l[i], l[i+1] = l[i+1], l[i]
                 again = True
     print(l)
-
-
-liste = [12, 4, 8, -2, 1]
-tri(liste)
+# je ne peux
