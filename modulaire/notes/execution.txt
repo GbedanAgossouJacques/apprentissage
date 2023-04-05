@@ -1,0 +1,99 @@
+Pour compiler un programme fortran simple, en se placeant dans le repertoire du fichier, on executer : 
+
+<compilateur> -o <nom de sortie sans extension> <nom du fichier suivit de son extension>
+
+Exemple : 
+gfortran -o my_program my_program.f90
+
+cette commande genère un fichier executable (.exe) de nom : <nom de sortie sans extension>
+ dans notre exemple on aura un fichier : my_program.exe
+
+puis on execute le fichier avec la commande : 
+
+./<nom> dans notre exemple : ./my_program
+
+
+
+---------- execution avec des fichier dans des repertoire differentes----------
+
+supposons qu'on a un programme principal main.f90 qui depende d'un module (fichier de sous runtime ou fonction) fonction.f90 
+les deux fichier son dans le meme repertoire :
+
+on execute en premier lieu le module :
+
+gfortran -c fonction.f90 
+
+cette commande genère un fichier objet (fonction.o) et un fichier intermediaire (.mod)
+
+puis on execute le programme principal en le liant au module:
+
+gfortran -o main main.f90 fonction.o
+
+cela genère un fichier executable main.exe 
+
+puis on execute le fichier executable :
+
+./main
+
+
+
+------ le module et le programme principal sont dans les repertoire different-------------
+
+supposons que le programme principal main.exe se trouve dans /desktop/fortran/main
+
+supposons que le module fonction.f90 se trouve dans /desktop/fortran/
+module
+
+supposons que l'on veut palcer les fichier .mod, genéré par l'execution du module 
+dans /desktop/fortran/include
+
+***Premierement on execute le module et on place le fichier .mod dans /desktop/fortran/include
+
+cd /desktop/fortran/module
+gfortran -c fonction.f90 -J /desktop/fortran/include
+
+cette commande creer un fichier objet fonction.o dans /desktop/fortran/module et 
+un fichier .mod dans /desktop/fortran/include à l'aide de option -J
+
+*** On se execute le programme principal
+
+gfortran -o main main.f90 -I /desktop/fortran/include /desktop/fortran/module/fonction.o
+
+cette commande creer un fichier executable main.exe
+option -I lui indique l'emplacement des fichiers .mod
+
+-------- Creer une bibliotheque-------------
+
+Un bibliotheque est un ensemble condensé de module.
+
+on veut creer une bibliotheque libname.a comportant les modules:
+module1.f90 , module2.f90 , ...., modulen.f90.
+
+On garde le repertoire precedent et on suppose que les modules se trouve dans le dossier module
+on cree le dossier de la bibliotheque : /desktop/fortran/library
+
+*** On execute les modules :
+
+gfortran -c module1.f90 module2.f90 ... modulen.f90 -J /desktop/fortran/include
+
+ici on prend le soin de placer les fichiers .mod dans /desktop/fortran/include
+
+
+*** on cree la bibliothrque en y placant les module 
+
+ar -r /desktop/fortran/library/libname.a  module1.o  module2.o ... modulen.o
+
+
+*** on execute le programme principal
+
+gfortran -o main main.f90 -I /desktop/fortran/include -L /desktop/fortran/library -l libname.a
+
+cette commande genère l'executable
+l'option -L specifie le chemin dans lequel se trouve la bibliotheque 
+l'option -l specifie le nom de la library
+Remarque : si le nom de la bibliotheque est preficé de "lib", comme dans notre cas "libname" 
+on peut ecrire -l name au lieu de -l libname.a
+
+Pour plus de de tails reportez vous à :
+https://fortran-lang.org/fr/learn/building_programs/managing_libraries/
+

@@ -1,0 +1,3 @@
+Pour suivre les instruction sur comment construire un projet 
+à l'aide de cmake :
+https://fortran-lang.org/fr/learn/building_programs/build_tools/

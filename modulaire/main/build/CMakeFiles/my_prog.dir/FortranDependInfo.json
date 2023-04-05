@@ -1,0 +1,17 @@
+{
+	"bmi-installation" : null,
+	"compiler-id" : "GNU",
+	"config" : "",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "C:/Users/ADMIN/3D Objects/code fortran/apprentissage/modulaire/main/build",
+	"dir-cur-src" : "C:/Users/ADMIN/3D Objects/code fortran/apprentissage/modulaire/main",
+	"dir-top-bld" : "C:/Users/ADMIN/3D Objects/code fortran/apprentissage/modulaire/main/build",
+	"dir-top-src" : "C:/Users/ADMIN/3D Objects/code fortran/apprentissage/modulaire/main",
+	"exports" : [],
+	"include-dirs" : [],
+	"language" : "Fortran",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Users/ADMIN/3D Objects/code fortran/apprentissage/modulaire/main/build",
+	"submodule-ext" : ".smod",
+	"submodule-sep" : "@"
+}

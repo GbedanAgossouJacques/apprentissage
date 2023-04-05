@@ -1,0 +1,20 @@
+{
+	"revision" : 0,
+	"rules" : 
+	[
+		{
+			"outputs" : [],
+			"primary-output" : "CMakeFiles\\\\my_prog.dir\\\\fonctions.f90.obj",
+			"provides" : 
+			[
+				{
+					"compiled-module-path" : "user_functions.mod",
+					"is-interface" : true,
+					"logical-name" : "user_functions.mod"
+				}
+			],
+			"requires" : []
+		}
+	],
+	"version" : 0
+}
