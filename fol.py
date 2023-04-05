@@ -23,7 +23,9 @@ def tri(liste):
 
 
 liste = [1, 3, 6, 2, 4, 1, 2, 3, 4, 6, 2, 3, 2, 2, 1, 0]
-tri(liste)
+tri(liste) 
+
+#fhcjhfc
 
 # ou encore
 def tri(l) :
