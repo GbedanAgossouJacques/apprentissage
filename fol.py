@@ -24,17 +24,3 @@ def tri(liste):
 
 liste = [1, 3, 6, 2, 4, 1, 2, 3, 4, 6, 2, 3, 2, 2, 1, 0]
 tri(liste) 
-
-#fhcjhfc
-
-# ou encore
-def tri(l) :
-    again = True
-    while again :
-        again = False
-        for i in range(0, len(l)-1):
-            if l[i] > l[i+1]:
-                l[i], l[i+1] = l[i+1], l[i]
-                again = True
-    print(l)
-# je ne peux
