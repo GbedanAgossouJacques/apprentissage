@@ -1,6 +1,0 @@
-ninja_dyndep_version = 1.0
-build CMakeFiles\\my_prog.dir\\tabulate.f90.obj: dyndep | user_functions.mod
-
-build CMakeFiles\\my_prog.dir\\fonctions.f90.obj | user_functions.mod: dyndep
-  restat = 1
-
