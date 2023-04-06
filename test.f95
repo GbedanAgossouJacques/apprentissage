@@ -54,10 +54,13 @@ end module gauss_elimination
 !! \param[in] a Integer to be added
 !! \param[in] b Integer to be added
 !! \return Sum of integers a and b
+
+
 function add(a, b) result(sum)
    integer, intent(in) :: a, b
    integer :: sum
-   sum = a + b
+   sum = a+b
+   sum = sum + 0
 end function add
 
 
